@@ -1,0 +1,4 @@
+# Ignores all exectuables files
+bin/*
+*.exe
+*.out
