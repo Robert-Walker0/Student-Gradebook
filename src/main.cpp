@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unistd.h>
+#include <conio.h>
 #include "..\include\Student.hpp"
 #include "..\include\Gradebook.hpp"
 
@@ -37,7 +38,11 @@ int getMainMenuEntry()
 void clearScreen(int timeInSeconds)
 {
   usleep(timeInSeconds * microseconds);
-  std::cout << "\033c";
+  #if defined _WIN32
+    std::system("cls");
+  #elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__) || (__APPLE__)
+    std::system("clear");
+  #endif
 }
 
 void inputHandler(int inputValue)
