@@ -45,10 +45,8 @@ void clearScreen(int timeInSeconds)
   #endif
 }
 
-void inputHandler(int inputValue)
+void addStudent()
 {
-  if(inputValue == ADD_STUDENT_OPTION)
-  {
     clearScreen(SHORT_PAUSE);
     std::string name;
     int mathGrade;
@@ -72,13 +70,63 @@ void inputHandler(int inputValue)
     schoolGradebook.addStudent(studentObj);
     std::cout << studentObj.getName() << " has been added to the gradebook!" << std::endl;
     clearScreen(MEDIUM_PAUSE);
-  } else if (inputValue == VIEW_STUDENTS_OPTION) {
+}
+
+void viewStudent()
+{
+  clearScreen(SHORT_PAUSE);
+  schoolGradebook.displayStudents();
+  clearScreen(LONG_PAUSE);
+}
+
+void searchByID()
+{
+  if(!schoolGradebook.getStudentID().empty())
+  {
     clearScreen(SHORT_PAUSE);
-    schoolGradebook.displayStudents();
+    int studentIDToFind;
+    std::cout << "Enter the ID of the student to search for: \n> ";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    
+    if(!(std::cin >> studentIDToFind))
+    {
+        std::cout << "Please enter a number into system to find a student!" << std::endl;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        clearScreen(MEDIUM_PAUSE);
+        return;
+    }
+
+    auto studentEntry = std::find(schoolGradebook.getStudentID().begin(), schoolGradebook.getStudentID().end(), std::to_string(studentIDToFind));
+
+    if(studentEntry == schoolGradebook.getStudentID().end())
+    {
+      std::cout << "There is no student with that student ID in our systems." << std::endl;
+      clearScreen(SHORT_PAUSE);
+      return;
+    }
+
+    Student currentStudent = schoolGradebook.getStudent(studentIDToFind);
+    std::cout << currentStudent.getName() << std::endl; 
     clearScreen(LONG_PAUSE);
+    
+    return;
+  }
+
+  std::cout << "There are no students currently in the Gradebook! Please add a student before trying to do this again!" << std::endl;
+}
+
+
+void inputHandler(int inputValue)
+{
+  if(inputValue == ADD_STUDENT_OPTION)
+  {
+   addStudent();
+  } else if (inputValue == VIEW_STUDENTS_OPTION) {
+    viewStudent();
   } else if(inputValue == SEARCH_BY_ID_OPTION)
   {
-    // Search Student by ID
+    searchByID();
   } else if(inputValue == SAVE_TO_FILE_OPTION)
   {
     // Save to file 
