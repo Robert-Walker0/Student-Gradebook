@@ -8,7 +8,7 @@ This project was developed as a personal project to further develop my skills as
 
 1. ✅ Add Student to Gradebook
 2. ✅ View All Students in Gradebook
-3. 📃 Search Students in Gradebook by ID
+3. ✅ Search Students in Gradebook by ID
 4. 📃 Save Gradebook data to file
 5. 📃 Load Gradebook data in to the program
 
