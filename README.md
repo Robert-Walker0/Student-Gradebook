@@ -15,9 +15,6 @@ This project was developed as a personal project to further develop my skills as
 > ✅ = Complete  
 > 📃 = In progress
 
-### Known Issues
-There is currently a minor bug where clearing the screen prints `c<-' instead of clearing the console.
-
 You can view progress for the project here:
 [Student Gradebook - Trello Board](https://trello.com/b/YATQDZ2Y/student-gradebook)
 
