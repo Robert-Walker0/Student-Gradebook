@@ -56,4 +56,4 @@ Once you run the program, this menu popup:
 Just type the number of your choice and follow the instructions in the prompts.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
