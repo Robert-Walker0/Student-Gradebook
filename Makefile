@@ -5,4 +5,4 @@ SRC = src/main.cpp src/Student.cpp src/Gradebook.cpp src/app.cpp
 OUT = bin/gradebook.exe
 
 all:
-	$(CXX) $(CXXFLAGS) -o $(OUT) $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(OUT) $(SRC) 2> errors.txt
