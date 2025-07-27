@@ -8,5 +8,5 @@ int main()
     inputHandler(input);
   } while(input != 6);
 
-  std::cout << "You have exited the program. Goodbye!" << std::endl;
+  return 0;
 }

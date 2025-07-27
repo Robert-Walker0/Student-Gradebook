@@ -136,7 +136,7 @@ void inputHandler(int inputValue)
   } else if(inputValue == LOAD_FROM_FILE_OPTION) {
     // Load from file
   } else if(inputValue == EXIT_OPTION) {
-    // Exit
+      std::cout << "You have exited the program. Goodbye!" << std::endl;
   } else {
     clearScreen(SHORT_PAUSE);
     std::cout << "Invalid value detected. Please enter a valid option (1 - 6)." << std::endl;
