@@ -2,3 +2,7 @@
 bin/*
 *.exe
 *.out
+
+# Ignores generated text files
+errors.txt
+StudentData.txt
