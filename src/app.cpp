@@ -113,11 +113,18 @@ void searchByID()
   std::cout << "There are no students currently in the Gradebook! Please add a student before trying to do this again!" << std::endl;
 }
 
+void saveStudents()
+{
+  clearScreen(SHORT_PAUSE);
+  schoolGradebook.saveAllStudent();
+  clearScreen(LONG_PAUSE);
+}
+
 void inputHandler(int inputValue)
 {
   if(inputValue == ADD_STUDENT_OPTION)
   {
-   addStudent();
+    addStudent();
   } else if (inputValue == VIEW_STUDENTS_OPTION) {
     viewStudent();
   } else if(inputValue == SEARCH_BY_ID_OPTION)
@@ -125,7 +132,7 @@ void inputHandler(int inputValue)
     searchByID();
   } else if(inputValue == SAVE_TO_FILE_OPTION)
   {
-    // Save to file 
+    saveStudents();
   } else if(inputValue == LOAD_FROM_FILE_OPTION) {
     // Load from file
   } else if(inputValue == EXIT_OPTION) {

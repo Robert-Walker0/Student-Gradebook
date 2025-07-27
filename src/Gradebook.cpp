@@ -20,6 +20,35 @@ void Gradebook::displayStudents() const
   }
 }
 
+void Gradebook::saveAllStudent() const
+{
+  if(!Students.empty())
+  {
+    std::ofstream gradebookFile;
+    gradebookFile.open("StudentData.txt");
+
+    if(!gradebookFile.is_open())
+    {
+      std::cerr << "Error: We encountered an error when trying to open file for saving. Unable to save data for gradebook.";
+
+      return;
+    }
+
+
+    for(Student student : Students)
+    {
+      const std::map<std::string, int> currentStudentGrades = student.getGrades();
+      gradebookFile << student.getName() << ", " << student.getID() << ", Math: " << currentStudentGrades.at("Math") << ", Science: " << currentStudentGrades.at("Science") << ", English: " << currentStudentGrades.at("English") << std::endl;
+    }
+
+    std::cout << "All of the students in the gradebook were successfully saved!" << std::endl;
+    gradebookFile.close();
+    return;
+  }
+
+  std::cout << "There are no students to save to the system. Closing process." << std::endl;
+}
+
 Student Gradebook::getStudent(int StudentID)
 {
   return Students.at(StudentID - 1);

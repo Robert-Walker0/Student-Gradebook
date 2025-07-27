@@ -2,12 +2,14 @@
 #include "Student.hpp"
 #include <string>
 #include <vector>
+#include <fstream>
 
 class Gradebook
 {
   public:
     void displayStudents() const;
     void addStudent(Student newStudent);
+    void saveAllStudent() const;
     std::vector<std::string> getStudentID() const;
     Student getStudent(int StudentID);
   private:
