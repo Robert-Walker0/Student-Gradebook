@@ -12,11 +12,12 @@ This project was developed as a personal project to further develop my skills as
 4. ✅ Save Gradebook data to file
 5. ✅ Load Gradebook data in to the program
 
-> ✅ = Complete  
+> ✅ = Complete
 > 📃 = In progress
 
-You can view progress for the project here:
-[Student Gradebook - Trello Board](https://trello.com/b/YATQDZ2Y/student-gradebook)
+NOTE: As everything has been completed, the Trello Board will be delete and this project's status from Work In Progress will be changed to completed.
+If you use this application and would like to send an email about it, please contact me at:
+algorithmicrealimst@gmail.com.
 
 ## Getting Started
 
@@ -36,7 +37,6 @@ Here are the step by step instructions to install the project currently:
 3. Create a bin directory
 4. Run 'make'
 5. Run the bin executable by typing .\bin\gradebook.exe
-
 
 ### Command Line Form
 ```
