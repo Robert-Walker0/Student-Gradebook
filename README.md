@@ -10,7 +10,7 @@ This project was developed as a personal project to further develop my skills as
 2. ✅ View All Students in Gradebook
 3. ✅ Search Students in Gradebook by ID
 4. ✅ Save Gradebook data to file
-5. 📃 Load Gradebook data in to the program
+5. ✅ Load Gradebook data in to the program
 
 > ✅ = Complete  
 > 📃 = In progress
@@ -57,3 +57,4 @@ Just type the number of your choice and follow the instructions in the prompts.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
