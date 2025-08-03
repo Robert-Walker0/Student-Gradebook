@@ -120,6 +120,13 @@ void saveStudents()
   clearScreen(LONG_PAUSE);
 }
 
+void loadGradebook()
+{
+  clearScreen(SHORT_PAUSE);
+  schoolGradebook.loadStudents();
+  clearScreen(LONG_PAUSE);
+}
+
 void inputHandler(int inputValue)
 {
   if(inputValue == ADD_STUDENT_OPTION)
@@ -134,7 +141,7 @@ void inputHandler(int inputValue)
   {
     saveStudents();
   } else if(inputValue == LOAD_FROM_FILE_OPTION) {
-    // Load from file
+    loadGradebook();
   } else if(inputValue == EXIT_OPTION) {
       std::cout << "You have exited the program. Goodbye!" << std::endl;
   } else {

@@ -49,6 +49,43 @@ void Gradebook::saveAllStudent() const
   std::cout << "There are no students to save to the system. Closing process." << std::endl;
 }
 
+void Gradebook::loadStudents()
+{
+  std::ifstream studentDataFile("StudentData.txt");
+  if(!std::filesystem::exists("StudentData.txt"))
+  {
+    std::cout << "There is no data in the system currently for students!" << std::endl;
+    return;
+  }
+
+  std::ifstream studentsFile("StudentData.txt");
+  if(studentsFile.is_open())
+  {
+    std::string currentStudentLine;
+    while(std::getline(studentsFile, currentStudentLine))
+    {
+      std::string name, id;
+      int start = 0;
+      std::string math, science, english;
+      name = currentStudentLine.substr(start, currentStudentLine.find(","));
+      currentStudentLine.replace(start, name.size() + 1, "");
+      id = currentStudentLine.substr(start, currentStudentLine.find(","));
+      currentStudentLine.replace(start, id.size() + 1, "");
+      math = currentStudentLine.substr(start, currentStudentLine.find(","));
+      currentStudentLine.replace(start, math.size() + 1, "");
+      science = currentStudentLine.substr(start, currentStudentLine.find(","));
+      currentStudentLine.replace(start, science.size() + 1, "");
+      english = currentStudentLine.substr(start, currentStudentLine.find(","));
+      Student loadedStudent(name, {{"Math", std::stoi(math)}, {"Science", std::stoi(science)}, {"English", std::stoi(english)}});
+      this->addStudent(loadedStudent);
+      std::cout << name << " has been loaded back into the gradebook!" << std::endl;
+    }
+  }
+
+  std::cout << "All of the students from the gradebook have been loaded!" << std::endl;
+  studentsFile.close();
+}
+
 Student Gradebook::getStudent(int StudentID)
 {
   return Students.at(StudentID - 1);
