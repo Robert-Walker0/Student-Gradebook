@@ -38,7 +38,7 @@ void Gradebook::saveAllStudent() const
     for(Student student : Students)
     {
       const std::map<std::string, int> currentStudentGrades = student.getGrades();
-      gradebookFile << student.getName() << ", " << student.getID() << ", Math: " << currentStudentGrades.at("Math") << ", Science: " << currentStudentGrades.at("Science") << ", English: " << currentStudentGrades.at("English") << std::endl;
+      gradebookFile << student.getName() << "," << student.getID() << "," << currentStudentGrades.at("Math") << "," << currentStudentGrades.at("Science") << "," << currentStudentGrades.at("English") << std::endl;
     }
 
     std::cout << "All of the students in the gradebook were successfully saved!" << std::endl;
