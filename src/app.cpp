@@ -42,6 +42,32 @@ int getMainMenuEntry()
     return value;
 }
 
+int obtainGrade(std::string subject)
+{
+  int grade;
+  std::cout << "Enter the student's grade for " << subject << ": \n> ";
+
+  if(!(std::cin >> grade))
+  {
+    std::cout << "You didn't enter a valid grade!" << std::endl;
+    std::cout << "Please enter only digits, not strings/characters!" << std::endl;
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    obtainGrade(subject);
+    return -1;
+  }
+
+  if(grade >= 0 and grade <= 100) {
+    std::cout << "Grade for " << subject << " has been accepted!" << std::endl;
+    return grade;
+  }
+
+  std::cout << "The grade was either too high or low, please input a number between (0 - 100)" << std::endl;
+  std::cout << "Please try again to grade for " << subject << " class for this student" << std::endl;
+  obtainGrade(subject);
+  return -1;
+}
+
 void addStudent()
 {
     clearScreen(SHORT_PAUSE);
@@ -54,14 +80,9 @@ void addStudent()
     std::cout << "Enter the student's name: \n> ";
     std::getline(std::cin, name);
     
-    std::cout << "Enter the student's grade for Math: \n> ";
-    std::cin >> mathGrade;
-    
-    std::cout << "Enter the student's grade for Science: \n> ";
-    std::cin >> scienceGrade;
-    
-    std::cout << "Enter the student's grade for English: \n> ";
-    std::cin >> englishGrade;
+    mathGrade = obtainGrade("Math");
+    scienceGrade = obtainGrade("Science");
+    englishGrade = obtainGrade("English");
 
     Student studentObj(name, {{"Math", mathGrade}, {"Science", scienceGrade}, {"English", englishGrade}});
     schoolGradebook.addStudent(studentObj);
