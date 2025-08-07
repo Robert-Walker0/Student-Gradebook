@@ -129,6 +129,17 @@ void loadGradebook()
 
 void inputHandler(int inputValue)
 {
+  if(std::cin.fail()) {
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    int newValue;
+    std::cout << "The value you entered wasn't a number, please try again by entering a value between (1-6)!" << std::endl;
+    std::cout << "Enter a new number: " << std::endl;
+    std::cin >> newValue;
+    inputHandler(newValue);
+    return;
+  }
+
   if(inputValue == ADD_STUDENT_OPTION)
   {
     addStudent();
@@ -146,7 +157,7 @@ void inputHandler(int inputValue)
       std::cout << "You have exited the program. Goodbye!" << std::endl;
   } else {
     clearScreen(SHORT_PAUSE);
-    std::cout << "Invalid value detected. Please enter a valid option (1 - 6)." << std::endl;
+    std::cout << "You entered a number below one or a number above six. Please enter a valid option between the number options!" << std::endl;
     clearScreen(MEDIUM_PAUSE);
   }
 }
