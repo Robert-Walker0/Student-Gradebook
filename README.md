@@ -1,8 +1,8 @@
 # Student Gradebook C++
 
-## A command line application for managing a student gradebook built using C++.
+## A command-line application for managing a student gradebook built using C++.
 
-This project was developed as a personal project to further develop my skills as a developer.
+This project was developed as a personal project to upgrade my skills as a developer. 
 
 ## Features:
 
@@ -10,30 +10,29 @@ This project was developed as a personal project to further develop my skills as
 2. ✅ View All Students in Gradebook
 3. ✅ Search Students in Gradebook by ID
 4. ✅ Save Gradebook data to file
-5. ✅ Load Gradebook data in to the program
+5. ✅ Load Gradebook data into the program
 
 > ✅ = Complete
 > 📃 = In progress
 
-NOTE: As everything has been completed, the Trello Board will be delete and this project's status from Work In Progress will be changed to completed.
-If you use this application and would like to send an email about it, please contact me at:
-algorithmicrealimst@gmail.com.
+NOTE: As everything has been completed, the Trello Board will be deleted, and this project's status from Work In Progress will be changed to completed.
+If you use this application and would like to send an email about it, please get in touch with me at: algorithmicrealimst@gmail.com.
 
 ## Getting Started
 
 Requirements:
 * C++ Compiler (g++)
 * Make (recommended but optional for Makefile)
-* Windows (Operarting System)
+* Windows (Operating System)
 
 ### How to build
 
-Here are the step by step instructions to install the project currently:
+Here are the step-by-step instructions to install the project currently:
 
 
 ### Manual
 1. Clone the project
-2. Change directory to project
+2. Change the directory to the project
 3. Create a bin directory
 4. Run 'make'
 5. Run the bin executable by typing .\bin\gradebook.exe
@@ -49,7 +48,7 @@ make
 
 ## Usage
 
-Once you run the program, this menu popup:
+Once you run the program, this menu pop up:
 
 ![alt text](imgs/image.png)
 
