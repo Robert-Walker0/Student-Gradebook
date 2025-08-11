@@ -16,7 +16,7 @@ This project was developed as a personal project to upgrade my skills as a devel
 > 📃 = In progress
 
 NOTE: As everything has been completed, the Trello Board will be deleted, and this project's status from Work In Progress will be changed to completed.
-If you use this application and would like to send an email about it, please get in touch with me at: algorithmicrealimst@gmail.com.
+If you use this application and encounter any errors you would like to submit, contact me at: algorithmicrealimst@gmail.com.
 
 ## Getting Started
 
